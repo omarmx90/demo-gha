@@ -1,8 +1,8 @@
-name: hello-world
+name: echo pipeline
 on: push
 jobs:
   my-job:
     runs-on: ubuntu-latest
     steps:
       - name: my-step
-        run: echo "Hello World!"
+        run: echo "Hello ${{ github.event.issue.user.login }}, thanks for your issue!"
