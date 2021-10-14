@@ -1,13 +1,8 @@
-name: echo pipeline
-on:
-  pull_request:
-    branches:
-      - main
-jobs:
-  pr_to_main:
-    name: pr_to_main
+name: Run tests
+on: [push, pull_request]
+jobs:  
+  test:
     runs-on: ubuntu-latest
-    
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
