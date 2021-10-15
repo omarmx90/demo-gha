@@ -15,7 +15,6 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      
       - name: Run commands inside docker
         id: hello
         uses: actions/hello-world-docker-action@v1
@@ -24,22 +23,14 @@ jobs:
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
-        
       - name: Print a greeting with variables
         env:
           MY_VAR: Hi there! My name is
           FIRST_NAME: Mona
           MIDDLE_NAME: The
-          LAST_NAME: Octocat
-          
-      - name: Secrets
-        env:
-          super_secret: ${{ secrets.SUPERSECRET }}
-        run: |
-          example-command "$super_secret"
+          LAST_NAME: Octocat 
         run: |
           echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
-          
       - name: Retrieve secret
         env:
           super_secret: ${{ secrets.SUPERSECRET }}
