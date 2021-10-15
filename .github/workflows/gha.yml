@@ -23,6 +23,11 @@ jobs:
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
+      - name: test secrets inside docker
+        env:
+          super_secret: ${{ secrets.SUPERSECRET }}
+        run: |
+          echo "$super_secret"
       - name: Print a greeting with variables
         env:
           MY_VAR: Hi there! My name is
