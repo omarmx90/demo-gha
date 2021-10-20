@@ -1,2 +1,3 @@
 # demo-gha
-Demo GitHub Actions.
+Demo GitHub Actions 
+Test
