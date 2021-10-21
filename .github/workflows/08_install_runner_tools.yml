@@ -1,0 +1,12 @@
+name: Install Runner tools
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Install Commands
+        run: |
+          sudo apt-get install devscripts
+          sudo apt-get install dput
