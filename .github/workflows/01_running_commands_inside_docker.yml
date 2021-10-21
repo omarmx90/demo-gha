@@ -1,4 +1,4 @@
-name: Run tests
+name: Run Running commands inside docker
 on: [push, pull_request]
 jobs:  
   test:
